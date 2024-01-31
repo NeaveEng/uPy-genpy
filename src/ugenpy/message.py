@@ -100,7 +100,7 @@ class MessageGenerator(object):
         for i in range(1, len(data)):
             md5string += "\n{}".format(data[i])
 
-        md5hash = md5.digest(md5string)
+        md5hash = md5.digest(str.encode(md5string))        
         classdef = """class {}(Message):
             _md5sum = "{}"
             _type = "{}"
